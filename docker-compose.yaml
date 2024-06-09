@@ -9,6 +9,8 @@ services:
       - ../../drive/files:/usr/src/app/files
     networks:
       - my-network
+    env_file:
+      - .env
 
 networks:
   my-network:
