@@ -6,7 +6,7 @@ const saveFile = async ({
   content
 }) => {
   try {
-    await fs.writeFile(`${process.env.DRIVE_PATH}/files/${filename}.${extension}`, content);
+    await fs.writeFile(`/usr/src/app/files/${filename}.${extension}`, content);
     return `${filename}.${extension}`
   } catch (error) {
     console.error(error?.message)
