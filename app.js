@@ -28,7 +28,7 @@ app.post("/save-file", async (req, res) => {
 
     const payload = { execNode, drive, owner, name, filename, extension }
   
-    const resultNodes = await fetch(`${process.env.API_URL}/files`, {
+    await fetch(`${process.env.API_URL}/files`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -36,9 +36,7 @@ app.post("/save-file", async (req, res) => {
       body: JSON.stringify(payload)
     })
 
-    const resultJsonNodes = await resultNodes?.json()
-
-    res.json({ resultJsonNodes, filename: result })
+    res.json({ filename: result })
   } catch (error) {
     res.status(500).json({ error })
   }
