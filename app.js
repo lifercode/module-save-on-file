@@ -28,6 +28,8 @@ app.post("/save-file", async (req, res) => {
 
     const payload = { execNode, drive, owner, name, filename, extension }
   
+    console.log('process.env🖖', process.env)
+
     await fetch(`${process.env.API_URL}/files`, {
       method: 'POST',
       headers: {
